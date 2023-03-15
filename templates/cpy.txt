@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Ascon 128</title>
+</head>
+
+<body>
+    <h1>Encrypt and Decrypt using Ascon(LWC standard for NIST)</h1>
+    <div class="row">
+        <div class="column" id="c1">
+            <h2>Encrypt Data</h2>
+            <form method="post">
+                <label for="as">Associated Data:</label><br>
+                <input type="text" name="as" size="100 px" height="20 px"><br><br>
+                <label for="plainText">Plaintext:</label><br>
+                <input type="text" name="plainText" size="100 px" height="20 px"><br><br>
+                <label for="Key">Key:</label><br>
+                <input type="text" name="Key" size="100 px" height="20 px"><br><br>
+                <label for="Nonce">Nonce:</label><br>
+                <input type="text" name="Nonce" size="100 px" height="20 px"><br>
+                <br>
+                <br>
+                <input type="submit" value="Encrypt" id="button">
+                <br>
+                <br>
+            </form>
+            <textarea  name="freeform1" rows="4" cols="50">
+                <div id="output1"> </div>
+            </textarea>
+            <br>
+            <br>
+        </div>
+        <div class="column" id="c2">
+            <h2>Decrypt Data</h2>
+            <form method="post">
+                <label for="as">Associated Data:</label><br>
+                <input type="text" name="as1" size="100 px" height="20 px"><br><br>
+                <label for="plainText">Ciphertext:</label><br>
+                <input type="text" name="cipherText" size="100 px" height="20 px"><br><br>
+                <label for="Key">Key:</label><br>
+                <input type="text" name="Key1" size="100 px" height="20 px"><br><br>
+                <label for="Nonce">Nonce:</label><br>
+                <input type="text" name="Nonce1" size="100 px" height="20 px"><br>
+                <br>
+                <br>
+                <input type="submit" value="Decrypt" id="button">
+                <br>
+                <br>
+            </form>
+            <textarea  name="freeform2" rows="4" cols="50">
+                <div id="output"></div>
+            </textarea>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    // $(document).ready(function() {
+    //   $('#form').on('submit',function(e){
+    //     var server_data = [
+    //                     {"as": assosiated_data},
+    //                     {"plainText": plain_text},
+    //                     {"Key": key},
+    //                     {"Nonce": nonce},
+    //                     ];
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/process_qtc",
+    //         data: JSON.stringify(server_data),
+    //         contentType: "application/json",
+    //         dataType: 'json'
+    //     })
+    //     .done(function(data){
+    //       $('#output1').text(data.output).show();
+    //     });
+    //     e.preventDefault();
+    //   });
+    // });
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    
+    });
+    </script>
+</body>
+
+</html>
+

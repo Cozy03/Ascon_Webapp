@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Ascon 128</title>
+</head>
+
+<body>
+    <h1>Encrypt and Decrypt using Ascon(LWC standard for NIST)</h1>
+    <div class="row">
+        <div class="column" id="c1">
+            <h2>Encrypt Data</h2>
+            <form method="post" id="Enc">
+                <label for="as">Associated Data:</label><br>
+                <input type="text" name="as" size="100 px" height="20 px"><br><br>
+                <label for="plainText">Plaintext:</label><br>
+                <input type="text" name="plainText" size="100 px" height="20 px"><br><br>
+                <label for="Key">Key:</label><br>
+                <input type="text" name="Key" size="100 px" height="20 px"><br><br>
+                <label for="Nonce">Nonce:</label><br>
+                <input type="text" name="Nonce" size="100 px" height="20 px"><br>
+                <br> <br>
+            </form>
+            <button type="submit" value="Encrypt" form="Enc" id="Encrypt"> Encrypt</button>
+                <br><br>
+            <div id="encrypt">
+              {{enc}}
+            </div>
+            <br>
+            <br>
+        </div>
+        <div class="column" id="c2">
+            <h2>Decrypt Data</h2>
+            <form method="post" id="Dec">
+                <label for="as">Associated Data:</label><br>
+                <input type="text" name="as1" size="100 px" height="20 px"><br><br>
+                <label for="plainText">Ciphertext:</label><br>
+                <input type="text" name="cipherText" size="100 px" height="20 px"><br><br>
+                <label for="Key">Key:</label><br>
+                <input type="text" name="Key1" size="100 px" height="20 px"><br><br>
+                <label for="Nonce">Nonce:</label><br>
+                <input type="text" name="Nonce1" size="100 px" height="20 px"><br>
+                <br>
+                <br>
+            </form>
+            <button type="submit" value="Encrypt" form="Dec" id="Decrypt">
+                Decrypt
+            </button>
+            <br>
+            <br>
+            <div id="decrypt">
+                
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
